@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'Eat Sleep Die';
+	src:url('../img/eatsleepdie/fonts/Eat Sleep Die.eot');
+	src:url('../img/eatsleepdie/fonts/Eat Sleep Die.eot?#iefix') format('embedded-opentype'),
+		url('../img/eatsleepdie/fonts/Eat Sleep Die.ttf') format('truetype'),
+		url('../img/eatsleepdie/fonts/Eat Sleep Die.woff') format('woff'),
+		url('../img/eatsleepdie/fonts/Eat Sleep Die.svg#Eat Sleep Die') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class*="icon-"] {
+	font-family: 'Eat Sleep Die';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sriracha:before {
+	content: "\e600";
+}
+.icon-skateboard:before {
+	content: "\e601";
+}
+.icon-coffee:before {
+	content: "\e602";
+}
+.icon-camera:before {
+	content: "\e603";
+}
+

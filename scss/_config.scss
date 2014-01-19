@@ -1,0 +1,164 @@
+/* ---------- Color ----------------- */
+$black:#33313a;
+$white:#fff;
+$tan:#fff7de;
+$red:#f4504d;
+
+/* ---------- Type ----------------- */
+$font-1: "proxima-nova",sans-serif;
+
+
+/* ---------- Breakpoints ----------------- */
+@mixin breakpoint($point) {
+  @if $point == large { @media (min-width: 64.375em) { @content; } }
+  @else if $point == medium { @media (min-width: 50em) { @content; } }
+  @else if $point == small { @media (min-width: 37.5em)  { @content; } }
+}
+
+/* ---------- MIXINS ----------------- */
+@mixin text-shadow($left, $top, $size, $color) { text-shadow: $left $top $size $color; }
+@mixin border-radius($size) { -moz-border-radius: $size; -webkit-border-radius: $size; border-radius: $size; }
+@mixin box-shadow($size) { -moz-box-shadow: $size; -webkit-box-shadow: $size; box-shadow: $size; }
+@mixin transform($param) { -moz-transform: $param; -webkit-transform: $param; -o-transform: $param; -ms-transform: $param; transform: $param; }
+@mixin background-clip($param) { background-clip: $param; -webkit-background-clip: $param; -moz-background-clip: $param; }
+@mixin background-size($param) { -webkit-background-size: $param; -moz-background-size: $param; -o-background-size: $param; background-size: $param;}
+@mixin filter($param) { -webkit-filter:$param; -moz-filter:$param; -ms-filter:$param; -o-filter:$param; filter:$param; }
+@mixin columns($count, $gap) { -moz-column-count: $count; -moz-column-gap: $gap; -webkit-column-count: $count; -webkit-column-gap: $gap; column-count: $count; column-gap: $gap; }
+@mixin columnbreakinside($param) { -webkit-column-break-inside:$param; -moz-column-break-inside:$param; -o-column-break-inside:$param; -ms-column-break-inside:$param; column-break-inside:$param; }
+@mixin columnbreakafter($param) {
+    break-after: $param;
+    -webkit-column-break-after: $param; 
+    -moz-column-break-after: $param; 
+    -ms-column-break-after: $param; 
+    -o-column-break-after: $param; 
+}
+
+@mixin background-linear-gradient($startPoint, $startColor, $startInterval, $endColor, $endInterval){
+        background-color:$startColor;
+        background-image: -webkit-linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+        background-image: -moz-linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+        background-image: -ms-linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+        background-image: -o-linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+        background-image: linear-gradient($startPoint, $startColor $startInterval, $endColor $endInterval);
+}
+
+/* ------------- Displays ---------------- */
+@mixin display($name, $type) {
+    .#{$name} { display:$type; }
+    .sm-#{$name} { @include breakpoint(small){ display:$type; } }
+    .md-#{$name} { @include breakpoint(medium){ display:$type; } }
+    .lg-#{$name} { @include breakpoint(large){ display:$type; } }
+}
+
+/* ------------- Making margins and padding OCSS ---------------- */
+@mixin width($name, $size) {
+    .w-#{$name} { width:$size; }
+    .sm-w-#{$name} { @include breakpoint(small){ width:$size; } }
+    .md-w-#{$name} { @include breakpoint(medium){ width:$size; } }
+    .lg-w-#{$name} { @include breakpoint(large){ width:$size; } }
+
+    .min-w-#{$name} { min-width:$size; }
+    .min-sm-w-#{$name} { @include breakpoint(small){ min-width:$size; } }
+    .min-md-w-#{$name} { @include breakpoint(medium){ min-width:$size; } }
+    .min-lg-w-#{$name} { @include breakpoint(large){ min-width:$size; } }
+}
+
+@mixin height($name, $size) {
+    .h-#{$name} { height:$size; }
+    .sm-h-#{$name} { @include breakpoint(small){ height:$size; } }
+    .md-h-#{$name} { @include breakpoint(medium){ height:$size; } }
+    .lg-h-#{$name} { @include breakpoint(large){ height:$size; } }
+    
+    .min-h-#{$name} { min-height:$size; }
+    .min-sm-h-#{$name} { @include breakpoint(small){ min-height:$size; } }
+    .min-md-h-#{$name} { @include breakpoint(medium){ min-height:$size; } }
+    .min-lg-h-#{$name} { @include breakpoint(large){ min-height:$size; } }
+}
+
+@mixin position($num, $size) {
+    .p-t-#{$num} { top:$size; }
+    .p-b-#{$num} { bottom:$size; }
+    .p-r-#{$num} { right:$size; }
+    .p-l-#{$num} { left:$size; }
+}
+
+@mixin padding($num, $size) {
+    .pd-#{$num} { padding:$size; }
+    .pd-t-b-#{$num} { padding-top:$size; padding-bottom:$size; }
+    .pd-r-l-#{$num} { padding-left:$size; padding-right:$size; }
+    .pd-t-#{$num} { padding-top:$size; }
+    .pd-r-#{$num} { padding-right:$size; }
+    .pd-b-#{$num} { padding-bottom:$size; }
+    .pd-l-#{$num} { padding-left:$size; }
+    
+    .sm-pd-#{$num} { @include breakpoint(small){ padding:$size; }}
+    .sm-pd-t-b-#{$num} { @include breakpoint(small){ padding-top:$size; padding-bottom:$size; }}
+    .sm-pd-r-l-#{$num} { @include breakpoint(small){ padding-left:$size; padding-right:$size; }}
+    .sm-pd-t-#{$num} { @include breakpoint(small){ padding-top:$size; }}
+    .sm-pd-r-#{$num} { @include breakpoint(small){ padding-right:$size; }}
+    .sm-pd-b-#{$num} { @include breakpoint(small){ padding-bottom:$size; }}
+    .sm-pd-l-#{$num} { @include breakpoint(small){ padding-left:$size; }}
+
+    .md-pd-#{$num} { @include breakpoint(medium){ padding:$size; }}
+    .md-pd-t-b-#{$num} { @include breakpoint(medium){ padding-top:$size; padding-bottom:$size; }}
+    .md-pd-r-l-#{$num} { @include breakpoint(medium){ padding-left:$size; padding-right:$size; }}
+    .md-pd-t-#{$num} { @include breakpoint(medium){ padding-top:$size; }}
+    .md-pd-r-#{$num} { @include breakpoint(medium){ padding-right:$size; }}
+    .md-pd-b-#{$num} { @include breakpoint(medium){ padding-bottom:$size; }}
+    .md-pd-l-#{$num} { @include breakpoint(medium){ padding-left:$size; }}
+
+    .lg-pd-#{$num} { @include breakpoint(large){ padding:$size; }}
+    .lg-pd-t-b-#{$num} { @include breakpoint(large){ padding-top:$size; padding-bottom:$size; }}
+    .lg-pd-r-l-#{$num} { @include breakpoint(large){ padding-left:$size; padding-right:$size; }}
+    .lg-pd-t-#{$num} { @include breakpoint(large){ padding-top:$size; }}
+    .lg-pd-r-#{$num} { @include breakpoint(large){ padding-right:$size; }}
+    .lg-pd-b-#{$num} { @include breakpoint(large){ padding-bottom:$size; }}
+    .lg-pd-l-#{$num} { @include breakpoint(large){ padding-left:$size; }}
+}
+
+@mixin margin($num, $size) {
+    .mn-#{$num} { margin:$size; }
+    .mn-t-b-#{$num} { margin-top:$size; margin-bottom:$size; }
+    .mn-r-l-#{$num} { margin-left:$size; margin-right:$size; }
+    .mn-t-#{$num} { margin-top:$size; }
+    .mn-r-#{$num} { margin-right:$size; }
+    .mn-b-#{$num} { margin-bottom:$size; }
+    .mn-l-#{$num} { margin-left:$size; }
+
+    .sm-mn-#{$num} { @include breakpoint(small){ margin:$size; }}
+    .sm-mn-t-b-#{$num} { @include breakpoint(small){ margin-top:$size; margin-bottom:$size; }}
+    .sm-mn-r-l-#{$num} { @include breakpoint(small){ margin-left:$size; margin-right:$size; }}
+    .sm-mn-t-#{$num} { @include breakpoint(small){ margin-top:$size; }}
+    .sm-mn-r-#{$num} { @include breakpoint(small){ margin-right:$size; }}
+    .sm-mn-b-#{$num} { @include breakpoint(small){ margin-bottom:$size; }}
+    .sm-mn-l-#{$num} { @include breakpoint(small){ margin-left:$size; }}
+
+    .md-mn-#{$num} { @include breakpoint(medium){ margin:$size; }}
+    .md-mn-t-b-#{$num} { @include breakpoint(medium){ margin-top:$size; margin-bottom:$size; }}
+    .md-mn-r-l-#{$num} { @include breakpoint(medium){ margin-left:$size; margin-right:$size; }}
+    .md-mn-t-#{$num} { @include breakpoint(medium){ margin-top:$size; }}
+    .md-mn-r-#{$num} { @include breakpoint(medium){ margin-right:$size; }}
+    .md-mn-b-#{$num} { @include breakpoint(medium){ margin-bottom:$size; }}
+    .md-mn-l-#{$num} { @include breakpoint(medium){ margin-left:$size; }}
+
+    .lg-mn-#{$num} { @include breakpoint(large){ margin:$size; }}
+    .lg-mn-t-b-#{$num} { @include breakpoint(large){ margin-top:$size; margin-bottom:$size; }}
+    .lg-mn-r-l-#{$num} { @include breakpoint(large){ margin-left:$size; margin-right:$size; }}
+    .lg-mn-t-#{$num} { @include breakpoint(large){ margin-top:$size; }}
+    .lg-mn-r-#{$num} { @include breakpoint(large){ margin-right:$size; }}
+    .lg-mn-b-#{$num} { @include breakpoint(large){ margin-bottom:$size; }}
+    .lg-mn-l-#{$num} { @include breakpoint(large){ margin-left:$size; }}
+
+}
+
+@mixin text-align($name, $pos) {
+    .txt-#{$name} { text-align:$pos; }
+    .sm-txt-#{$name} { @include breakpoint(small){ text-align:$pos; } }
+    .md-txt-#{$name} { @include breakpoint(medium){ text-align:$pos; } }
+    .lg-txt-#{$name} { @include breakpoint(large){ text-align:$pos; } }
+}
+
+/* ---------- Transitions & Animations ----------------- */
+@mixin transition($param) { -moz-transition: $param; -webkit-transition: $param; -o-transition: $param; -ms-transition: $param; transition: $param; }
+@mixin transform($type) { transform: $type; -ms-transform: $type; /* IE 9 */ -webkit-transform: $type; /* Safari and Chrome */}
+@mixin backface-visibility($param) { /* backface-visibility:$param; */ -webkit-backface-visibility: $param; -moz-backface-visibility:$param; -ms-backface-visibility:$param; }

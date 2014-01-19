@@ -1,0 +1,355 @@
+::-webkit-scrollbar {width:8px}
+::-webkit-scrollbar-thumb { background: lighten($black, 50%); border-radius:6px;}
+::-webkit-scrollbar-track {background: $white;}
+/* --- Master Overrides --- */
+
+* {
+    margin:0;
+    padding:0;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a { @extend .no-dec; }
+
+/* --- Type --- */
+
+.f1 { font-family:$font-1; }
+
+.caps { text-transform:uppercase; }
+.nrml { font-weight:400; }
+.bld { font-weight:800; }
+
+.no-dec { text-decoration:none; }
+
+.trk-0em05 { letter-spacing:0.05em; }
+
+/* Align --- .txt-# .sm-txt-# .md-txt-# .lg-txt-#  */
+    @include text-align(c, center);
+    @include text-align(r, right);
+    @include text-align(l, left);
+    @include text-align(j, justify);
+    
+/* Sizes  */
+    .fs320 { 
+        $size:320px;
+        font-size:$size / 3;
+        @include breakpoint(small){ font-size:$size / 1.5; } 
+        @include breakpoint(medium){ font-size:$size / 1.2; }
+        @include breakpoint(large){ font-size:$size * 1.1; } 
+    }
+    .fs5 { 
+        $size:138px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs4 { 
+        $size:88px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs3 { 
+        $size:68px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs2 { 
+        $size:38px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs1 { 
+        $size:28px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs0 { 
+        $size:20px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs { 
+        $size:18px; 
+        font-size:$size / 1.2;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fsub { 
+        $size:16px; 
+        font-size:$size / 1.2;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    
+    .lead-2x { line-height:2em; }
+    .lead-1x5 { line-height:1.5em; }
+    .lead-1x4 { line-height:1.4em; }
+    .lead-1x3 { line-height:1.3em; }
+    .lead-1x2 { line-height:1.2em; }
+    
+/* Colors*/
+    .c-blk { color:$black; }
+        a.c-blk:hover { color:$red; }
+    .c-red { color:$red; }
+        a.c-red:hover { color:$black; }
+    .c-wht { color:$white; }
+        a.c-wht:hover { color:$red; }
+    .c-tan { color:$tan; }
+    
+    .c-l-blk { color:mix($black, $tan, 50%);}
+    
+    .bg-img-jeffrey::after { 
+        content: "";
+        background-image: url('../img/jeffrey-cry.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        @include background-size(cover);
+        opacity: 0.1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 0;  
+    }
+    
+    .bg-blk { background-color:$black; }
+    .bg-wht { background-color:$white; }
+    .bg-tan { background-color:$tan; }
+    .bg-red { background-color:$red; }
+    
+    .bg-cover { @include background-size(cover); }
+    .bg-fixed { background-position:fixed; }
+    .bg-center { background-position:center; }
+
+/* --- Layouts --- */
+    
+/* Positions -------------------------------------    */
+    .abs { position:absolute; }
+    .rel { position:relative; }
+    .fix { position:fixed; }
+    
+    .vrt-t { vertical-align:top; }
+    .vrt-m { vertical-align:middle; }
+    .vrt-b { vertical-align:bottom; }
+    
+    .flt-l { float:left; }
+    .flt-r { float:right; }
+    .sm-flt-r { @include breakpoint(small){ float:right; }}
+
+    .clearfix {
+        zoom:1;
+        &:before, &:after {
+            content: "\0020";
+            display: block;
+            height: 0;
+            overflow: hidden;
+        }
+        &:after { clear: both; }
+    }
+    
+/* -- Top Bottom Right Left .p-t-# .p-b-# .p-r-# .p-l-#  */
+    @include position(50, 50%);
+
+/* Z-INDEX -------------------------------------*/
+    .idx-min10 { z-index:-10; }
+    .idx-0 { z-index:0; }
+    .idx-10 { z-index:10; }
+    .idx-20 { z-index:20; }
+    .idx-30 { z-index:30; }
+    .idx-40 { z-index:40; }
+    .idx-50 { z-index:50; }
+    .idx-60 { z-index:60; }
+    .idx-70 { z-index:70; }
+    .idx-80 { z-index:80; }
+    .idx-90 { z-index:90; }
+    .idx-100 { z-index:100; }
+    .idx-1000 { z-index:1000; }
+    .idx-2000 { z-index:2000; }
+
+/* Box-sizing -------------------------------------  */
+    .box-bdr { box-sizing: border-box; }
+    
+/* Display -------------------------------------  */
+/*    .# .sm-# .md-# .lg-#   */
+    @include display('in-bl', inline-block);
+    @include display('in', inline);
+    @include display('bl', block);
+    @include display('in-tbl', inline-table);
+    @include display('tbl', table);
+    @include display('tbl-cl', table-cell);
+    @include display('none', none);
+
+/* Max-Width -------------------------------------  */
+    .max-w-1024 { max-width:1024px; }
+    .max-w-1280 { max-width:1280px; }
+
+/* Overflows -------------------------------------  */
+    .of-auto { overflow:auto; }
+    .of-vis { overflow:visible; }
+    .of-hid { overflow: hidden; }
+    .of-y-auto { overflow-y: auto; }
+    .of-x-auto { overflow-x: auto; }
+    .of-y-scr { overflow-y: scroll; }
+    .of-x-scr { overflow-x: scroll; }
+
+/* WIDTHs --- .w-# .sm-w-# .md-w-# .lg-w-#  */
+    @include width(100, 100%);
+    @include width(90, 90%);
+    @include width(80, 80%);
+    @include width(70, 70%);
+    @include width(60, 60%);
+    @include width(50, 50%);
+    @include width(40, 40%);
+    @include width(33, 32%);
+    @include width(30, 30%);
+    @include width(25, 22%);
+    @include width(20, 20%);
+    @include width(10, 10%);
+    @include width(auto, auto);
+
+/* HEIGHTs --- .h-# .sm-h-# .md-h-# .lg-h-#  */
+    @include height(100, 100%);
+    @include height(90, 90%);
+    @include height(80, 80%);
+    @include height(70, 70%);
+    @include height(60, 60%);
+    @include height(50, 50%);
+    @include height(40, 40%);
+    @include height(30, 30%);
+    @include height(20, 20%);
+    @include height(10, 10%);
+    
+    @include height('1em', 1em);
+    @include height('2em', 2em);
+    @include height('4em', 4em);
+    @include height('8em', 8em);
+    @include height('12em', 12em);
+    @include height('16em', 16em);
+    @include height('20em', 20em);
+        
+/* MARGINs --- .mn-t-r-b-l-#  */
+    @include margin(auto, auto);
+    @include margin('2em4', 2.4em);
+    @include margin('2em2', 2.2em);
+    @include margin('2em', 2em);
+    @include margin('1em8', 1.8em);
+    @include margin('1em6', 1.6em);
+    @include margin('1em5', 1.5em);
+    @include margin('1em4', 1.4em);
+    @include margin('1em2', 1.2em);
+    @include margin('1em', 1em);
+    @include margin('em8', 0.8em);
+    @include margin('em6', 0.6em);
+    @include margin('em5', 0.5em);
+    @include margin('em4', 0.4em);
+    @include margin('em2', 0.2em);
+    @include margin(10, 10%);
+    @include margin(8, 8%);
+    @include margin(4, 4%);
+    @include margin(3, 3%);
+    @include margin(2, 2%);
+    @include margin('neg-1em', -1em);
+    @include margin('neg-1em4', -1.4em);
+    @include margin('neg-2em', -2em);
+    @include margin('neg-25', -25%);
+    @include margin('neg-13em5', -13.5em);
+
+    @include margin(0, 0);
+
+/* PADDINGs --- .pd-t-r-b-l-#  */
+    @include padding(20, 20%);
+    @include padding(8, 8%);
+    @include padding(4, 4%);
+    @include padding(2, 2%);
+    @include padding('10em', 10em);
+    @include padding('8em', 8em);
+    @include padding('6em', 6em);
+    @include padding('4em', 4em);
+    @include padding('3em', 3em);
+    @include padding('2em', 2em);
+    @include padding('1em', 1em);
+    @include padding('0em7', 0.7em);
+    @include padding('0em5', 0.5em);
+    @include padding('0em3', 0.3em);
+    @include padding('0em1', 0.1em);
+
+    @include padding(0, 0);
+    
+    $ab-ctr:48em;
+    $half-ab-ctr: -($ab-ctr / 2);
+    @include width('abs-ctr', $ab-ctr);
+    @include margin('abs-ctr', $half-ab-ctr);
+
+/* ---  Styling  ------------------------------------------ */
+/* Border*/
+/* -- Style*/
+    .bdr-solid { border-style:solid; }
+    .bdr-dash { border-style:dashed; }
+    .bdr-dotted { border-style:dotted; }
+/* -- Color*/
+    .bdr-c-wht { border-color:$white; }
+/* -- Size*/
+    .bdr-b-1px { border-bottom:1px; }
+
+/*-- Shadows */
+    .shdw-subtle { @include box-shadow(0px 1px 2px 0px rgba(0,0,0,0.07)); }
+
+    .list-0 { list-style:none; }
+
+    .arw-l {
+    	width: 0; 
+    	height: 0; 
+    	border-top: 0.3em solid transparent;
+    	border-bottom: 0.3em solid transparent; 
+    	border-right:0.5em solid $red; 
+    }
+    a.arw-l { &:hover { border-right-color:$black; } }
+    
+    .arw-r {
+    	width: 0; 
+    	height: 0; 
+    	border-top: 0.3em solid transparent;
+    	border-bottom: 0.3em solid transparent; 
+    	border-left:0.5em solid $red; 
+    }
+    a.arw-r { &:hover { border-left-color:$black; } }
+    
+/* ---  Animating  ------------------------------------------ */
+@keyframes myfirst {
+    from { color:$white; }
+    to { color:$red; }
+}
+
+@-webkit-keyframes flicker {
+    from { color:$white; }
+    to { color:$red; }
+}
+
+.anim-flck {
+    animation-name: flicker;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+
+    -webkit-animation-name: flicker;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: reverse;
+}
+
+.anim-flck.anim-1 {
+    -webkit-animation-delay: 1s;
+}
+.anim-flck.anim-2 {
+    -webkit-animation-delay: 1.5s;
+}
+.anim-flck.anim-3 {
+    -webkit-animation-delay: 2s;
+}
+.anim-flck.anim-4 {
+    -webkit-animation-delay: 2.5s;
+}
