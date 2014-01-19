@@ -180,6 +180,9 @@ a { @extend .no-dec; }
     @include margin('abs-ctr', $half-ab-ctr);
 
 /* ---  Styling  ------------------------------------------ */
+/* Lists */
+    .list-0 { list-style:none; }    
+    
 /* Border*/
 /* -- Style*/
     .bdr-solid { border-style:solid; }
@@ -192,8 +195,6 @@ a { @extend .no-dec; }
 
 /*-- Shadows */
     .shdw-subtle { @include box-shadow(0px 1px 2px 0px rgba(0,0,0,0.07)); }
-
-    .list-0 { list-style:none; }
 
 /*-- CSS Art */
     .arw-l {
