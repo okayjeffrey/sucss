@@ -1,38 +1,82 @@
-@font-face {
-	font-family: 'Eat Sleep Die';
-	src:url('../img/eatsleepdie/fonts/Eat Sleep Die.eot');
-	src:url('../img/eatsleepdie/fonts/Eat Sleep Die.eot?#iefix') format('embedded-opentype'),
-		url('../img/eatsleepdie/fonts/Eat Sleep Die.ttf') format('truetype'),
-		url('../img/eatsleepdie/fonts/Eat Sleep Die.woff') format('woff'),
-		url('../img/eatsleepdie/fonts/Eat Sleep Die.svg#Eat Sleep Die') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+/* ---------- Type ----------------- */
+.f1 { font-family:$font-1; }
 
-[class*="icon-"] {
-	font-family: 'Eat Sleep Die';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+.caps { text-transform:uppercase; }
+.nrml { font-weight:400; }
+.bld { font-weight:800; }
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
+.no-dec { text-decoration:none; }
 
-.icon-sriracha:before {
-	content: "\e600";
-}
-.icon-skateboard:before {
-	content: "\e601";
-}
-.icon-coffee:before {
-	content: "\e602";
-}
-.icon-camera:before {
-	content: "\e603";
-}
+.trk-0em05 { letter-spacing:0.05em; }
 
+/* Align --- .txt-# .sm-txt-# .md-txt-# .lg-txt-#  */
+    @include text-align(c, center);
+    @include text-align(r, right);
+    @include text-align(l, left);
+    @include text-align(j, justify);
+    
+/* Sizes  */
+    .fs320 { 
+        $size:320px;
+        font-size:$size / 3;
+        @include breakpoint(small){ font-size:$size / 1.5; } 
+        @include breakpoint(medium){ font-size:$size / 1.2; }
+        @include breakpoint(large){ font-size:$size * 1.1; } 
+    }
+    .fs5 { 
+        $size:138px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs4 { 
+        $size:88px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs3 { 
+        $size:68px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs2 { 
+        $size:38px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs1 { 
+        $size:28px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs0 { 
+        $size:20px; 
+        font-size:$size / 1.75;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fs { 
+        $size:18px; 
+        font-size:$size / 1.2;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    .fsub { 
+        $size:16px; 
+        font-size:$size / 1.2;
+        @include breakpoint(medium){ font-size:$size; }
+    }
+    
+    .lead-2x { line-height:2em; }
+    .lead-1x5 { line-height:1.5em; }
+    .lead-1x4 { line-height:1.4em; }
+    .lead-1x3 { line-height:1.3em; }
+    .lead-1x2 { line-height:1.2em; }
+    
+/* Colors*/
+    .c-blk { color:$black; }
+        a.c-blk:hover { color:$red; }
+    .c-red { color:$red; }
+        a.c-red:hover { color:$black; }
+    .c-wht { color:$white; }
+        a.c-wht:hover { color:$red; }
+    .c-tan { color:$tan; }
+    
+    .c-l-blk { color:mix($black, $tan, 50%);}

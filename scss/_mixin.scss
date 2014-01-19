@@ -1,13 +1,3 @@
-/* ---------- Color ----------------- */
-$black:#33313a;
-$white:#fff;
-$tan:#fff7de;
-$red:#f4504d;
-
-/* ---------- Type ----------------- */
-$font-1: "proxima-nova",sans-serif;
-
-
 /* ---------- Breakpoints ----------------- */
 @mixin breakpoint($point) {
   @if $point == large { @media (min-width: 64.375em) { @content; } }
