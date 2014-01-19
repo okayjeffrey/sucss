@@ -1,6 +1,3 @@
-::-webkit-scrollbar {width:8px}
-::-webkit-scrollbar-thumb { background: lighten($black, 50%); border-radius:6px;}
-::-webkit-scrollbar-track {background: $white;}
 /* --- Master Overrides --- */
 
 * {
@@ -15,105 +12,8 @@ html {
 
 a { @extend .no-dec; }
 
-/* --- Type --- */
 
-.f1 { font-family:$font-1; }
-
-.caps { text-transform:uppercase; }
-.nrml { font-weight:400; }
-.bld { font-weight:800; }
-
-.no-dec { text-decoration:none; }
-
-.trk-0em05 { letter-spacing:0.05em; }
-
-/* Align --- .txt-# .sm-txt-# .md-txt-# .lg-txt-#  */
-    @include text-align(c, center);
-    @include text-align(r, right);
-    @include text-align(l, left);
-    @include text-align(j, justify);
-    
-/* Sizes  */
-    .fs320 { 
-        $size:320px;
-        font-size:$size / 3;
-        @include breakpoint(small){ font-size:$size / 1.5; } 
-        @include breakpoint(medium){ font-size:$size / 1.2; }
-        @include breakpoint(large){ font-size:$size * 1.1; } 
-    }
-    .fs5 { 
-        $size:138px; 
-        font-size:$size / 1.75;
-        @include breakpoint(medium){ font-size:$size; }
-    }
-    .fs4 { 
-        $size:88px; 
-        font-size:$size / 1.75;
-        @include breakpoint(medium){ font-size:$size; }
-    }
-    .fs3 { 
-        $size:68px; 
-        font-size:$size / 1.75;
-        @include breakpoint(medium){ font-size:$size; }
-    }
-    .fs2 { 
-        $size:38px; 
-        font-size:$size / 1.75;
-        @include breakpoint(medium){ font-size:$size; }
-    }
-    .fs1 { 
-        $size:28px; 
-        font-size:$size / 1.75;
-        @include breakpoint(medium){ font-size:$size; }
-    }
-    .fs0 { 
-        $size:20px; 
-        font-size:$size / 1.75;
-        @include breakpoint(medium){ font-size:$size; }
-    }
-    .fs { 
-        $size:18px; 
-        font-size:$size / 1.2;
-        @include breakpoint(medium){ font-size:$size; }
-    }
-    .fsub { 
-        $size:16px; 
-        font-size:$size / 1.2;
-        @include breakpoint(medium){ font-size:$size; }
-    }
-    
-    .lead-2x { line-height:2em; }
-    .lead-1x5 { line-height:1.5em; }
-    .lead-1x4 { line-height:1.4em; }
-    .lead-1x3 { line-height:1.3em; }
-    .lead-1x2 { line-height:1.2em; }
-    
-/* Colors*/
-    .c-blk { color:$black; }
-        a.c-blk:hover { color:$red; }
-    .c-red { color:$red; }
-        a.c-red:hover { color:$black; }
-    .c-wht { color:$white; }
-        a.c-wht:hover { color:$red; }
-    .c-tan { color:$tan; }
-    
-    .c-l-blk { color:mix($black, $tan, 50%);}
-    
-    .bg-img-jeffrey::after { 
-        content: "";
-        background-image: url('../img/jeffrey-cry.jpg');
-        background-position: center center;
-        background-repeat: no-repeat;
-        @include background-size(cover);
-        opacity: 0.1;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        z-index: 0;  
-    }
-    
+/* Colors*/        
     .bg-blk { background-color:$black; }
     .bg-wht { background-color:$white; }
     .bg-tan { background-color:$tan; }
@@ -277,8 +177,6 @@ a { @extend .no-dec; }
 
     @include padding(0, 0);
     
-    $ab-ctr:48em;
-    $half-ab-ctr: -($ab-ctr / 2);
     @include width('abs-ctr', $ab-ctr);
     @include margin('abs-ctr', $half-ab-ctr);
 
@@ -298,6 +196,7 @@ a { @extend .no-dec; }
 
     .list-0 { list-style:none; }
 
+/*-- CSS Art */
     .arw-l {
     	width: 0; 
     	height: 0; 
@@ -315,41 +214,3 @@ a { @extend .no-dec; }
     	border-left:0.5em solid $red; 
     }
     a.arw-r { &:hover { border-left-color:$black; } }
-    
-/* ---  Animating  ------------------------------------------ */
-@keyframes myfirst {
-    from { color:$white; }
-    to { color:$red; }
-}
-
-@-webkit-keyframes flicker {
-    from { color:$white; }
-    to { color:$red; }
-}
-
-.anim-flck {
-    animation-name: flicker;
-    animation-duration: 0.5s;
-    animation-timing-function: ease;
-    animation-iteration-count: 1;
-    animation-direction: reverse;
-
-    -webkit-animation-name: flicker;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-direction: reverse;
-}
-
-.anim-flck.anim-1 {
-    -webkit-animation-delay: 1s;
-}
-.anim-flck.anim-2 {
-    -webkit-animation-delay: 1.5s;
-}
-.anim-flck.anim-3 {
-    -webkit-animation-delay: 2s;
-}
-.anim-flck.anim-4 {
-    -webkit-animation-delay: 2.5s;
-}

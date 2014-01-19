@@ -1,71 +1,25 @@
+/* ------------------------------------------------
+This file is what you will change to your design specs (Don't delete from this file these variables are needed just alter their values or add to the file)
+--------------------------------------------------- */
 /* ---------- Color ----------------- */
 /* ---------- Type ----------------- */
+/* ---------- A little Math you might not need to touch this ----------------- */
 /* ---------- Breakpoints ----------------- */
 /* ---------- MIXINS ----------------- */
 /* ------------- Displays ---------------- */
 /* ------------- Making margins and padding OCSS ---------------- */
 /* ---------- Transitions & Animations ----------------- */
-@font-face {
-  font-family: 'Eat Sleep Die';
-  src: url("../img/eatsleepdie/fonts/Eat Sleep Die.eot");
-  src: url("../img/eatsleepdie/fonts/Eat Sleep Die.eot?#iefix") format("embedded-opentype"), url("../img/eatsleepdie/fonts/Eat Sleep Die.ttf") format("truetype"), url("../img/eatsleepdie/fonts/Eat Sleep Die.woff") format("woff"), url("../img/eatsleepdie/fonts/Eat Sleep Die.svg#Eat Sleep Die") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-[class*="icon-"] {
-  font-family: 'Eat Sleep Die';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.icon-sriracha:before {
-  content: "\e600"; }
-
-.icon-skateboard:before {
-  content: "\e601"; }
-
-.icon-coffee:before {
-  content: "\e602"; }
-
-.icon-camera:before {
-  content: "\e603"; }
-
-::-webkit-scrollbar {
-  width: 8px; }
-
-::-webkit-scrollbar-thumb {
-  background: #b2afbb;
-  border-radius: 6px; }
-
-::-webkit-scrollbar-track {
-  background: white; }
-
-/* --- Master Overrides --- */
-* {
-  margin: 0;
-  padding: 0; }
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-/* --- Type --- */
+/* ---------- Type ----------------- */
 .f1 {
-  font-family: "proxima-nova", sans-serif; }
+  font-family: "Helvetica", sans-serif; }
 
-.caps, .inherit h1, .inherit h2, .inherit h3 {
+.caps {
   text-transform: uppercase; }
 
-.nrml, .inherit h4 {
+.nrml {
   font-weight: 400; }
 
-.bld, .inherit h1, .inherit h4 a {
+.bld {
   font-weight: 800; }
 
 .no-dec, a {
@@ -160,22 +114,22 @@ html {
     .fs4 {
       font-size: 88px; } }
 
-.fs3, .inherit h1 {
+.fs3 {
   font-size: 38.85714px; }
   @media (min-width: 50em) {
-    .fs3, .inherit h1 {
+    .fs3 {
       font-size: 68px; } }
 
-.fs2, .inherit h2 {
+.fs2 {
   font-size: 21.71429px; }
   @media (min-width: 50em) {
-    .fs2, .inherit h2 {
+    .fs2 {
       font-size: 38px; } }
 
-.fs1, .inherit ul, .inherit h3, .inherit h4 {
+.fs1 {
   font-size: 16px; }
   @media (min-width: 50em) {
-    .fs1, .inherit ul, .inherit h3, .inherit h4 {
+    .fs1 {
       font-size: 28px; } }
 
 .fs0 {
@@ -212,16 +166,16 @@ html {
   line-height: 1.2em; }
 
 /* Colors*/
-.c-blk, .inherit h1 a, .inherit h2 a, .inherit h3 a, .inherit h4 a {
+.c-blk {
   color: #33313a; }
 
-a.c-blk:hover, .inherit h1 a:hover, .inherit h2 a:hover, .inherit h3 a:hover, .inherit h4 a:hover {
+a.c-blk:hover {
   color: #f4504d; }
 
-.c-red, .inherit a {
+.c-red {
   color: #f4504d; }
 
-a.c-red:hover, .inherit a:hover {
+a.c-red:hover {
   color: #33313a; }
 
 .c-wht {
@@ -233,26 +187,19 @@ a.c-wht:hover {
 .c-tan {
   color: #fff7de; }
 
-.c-l-blk, .bg-blk .inherit a:hover {
+.c-l-blk {
   color: #99948c; }
 
-.bg-img-jeffrey::after {
-  content: "";
-  background-image: url("../img/jeffrey-cry.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  opacity: 0.1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: 0; }
+/* --- Master Overrides --- */
+* {
+  margin: 0;
+  padding: 0; }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* Colors*/
 .bg-blk {
   background-color: #33313a; }
 
@@ -282,7 +229,7 @@ a.c-wht:hover {
 .abs {
   position: absolute; }
 
-.rel, .full-h-w {
+.rel {
   position: relative; }
 
 .fix {
@@ -374,7 +321,7 @@ a.c-wht:hover {
   z-index: 2000; }
 
 /* Box-sizing -------------------------------------  */
-.box-bdr, * {
+.box-bdr {
   box-sizing: border-box; }
 
 /* Display -------------------------------------  */
@@ -439,7 +386,7 @@ a.c-wht:hover {
   .lg-in-tbl {
     display: inline-table; } }
 
-.tbl, .full-h-w {
+.tbl {
   display: table; }
 
 @media (min-width: 37.5em) {
@@ -514,7 +461,7 @@ a.c-wht:hover {
   overflow-x: scroll; }
 
 /* WIDTHs --- .w-# .sm-w-# .md-w-# .lg-w-#  */
-.w-100, .full-h-w {
+.w-100 {
   width: 100%; }
 
 @media (min-width: 37.5em) {
@@ -905,7 +852,7 @@ a.c-wht:hover {
     min-width: auto; } }
 
 /* HEIGHTs --- .h-# .sm-h-# .md-h-# .lg-h-#  */
-.h-100, html, body, .full-h-w {
+.h-100 {
   height: 100%; }
 
 @media (min-width: 37.5em) {
@@ -920,7 +867,7 @@ a.c-wht:hover {
   .lg-h-100 {
     height: 100%; } }
 
-.min-h-100, .full-h-w {
+.min-h-100 {
   min-height: 100%; }
 
 @media (min-width: 37.5em) {
@@ -1416,7 +1363,7 @@ a.c-wht:hover {
     min-height: 20em; } }
 
 /* MARGINs --- .mn-t-r-b-l-#  */
-.mn-auto, .full-h-w {
+.mn-auto {
   margin: auto; }
 
 .mn-t-b-auto {
@@ -4241,7 +4188,7 @@ a.c-wht:hover {
   .lg-mn-l-neg-13em5 {
     margin-left: -13.5em; } }
 
-.mn-0, .inherit ul, .inherit h1, .inherit h2, .inherit h3, .inherit h4 {
+.mn-0 {
   margin: 0; }
 
 .mn-t-b-0 {
@@ -4711,7 +4658,7 @@ a.c-wht:hover {
 .pd-r-2 {
   padding-right: 2%; }
 
-.pd-b-2, .inherit ul li {
+.pd-b-2 {
   padding-bottom: 2%; }
 
 .pd-l-2 {
@@ -5502,7 +5449,7 @@ a.c-wht:hover {
 .pd-r-1em {
   padding-right: 1em; }
 
-.pd-b-1em, .inherit p {
+.pd-b-1em {
   padding-bottom: 1em; }
 
 .pd-l-1em {
@@ -5615,7 +5562,7 @@ a.c-wht:hover {
 .pd-r-0em7 {
   padding-right: 0.7em; }
 
-.pd-b-0em7, .inherit h4 {
+.pd-b-0em7 {
   padding-bottom: 0.7em; }
 
 .pd-l-0em7 {
@@ -5841,7 +5788,7 @@ a.c-wht:hover {
 .pd-r-0em3 {
   padding-right: 0.3em; }
 
-.pd-b-0em3, .inherit h1, .inherit h2, .inherit h3 {
+.pd-b-0em3 {
   padding-bottom: 0.3em; }
 
 .pd-l-0em3 {
@@ -6050,7 +5997,7 @@ a.c-wht:hover {
   .lg-pd-l-0em1 {
     padding-left: 0.1em; } }
 
-.pd-0, .inherit ul {
+.pd-0 {
   padding: 0; }
 
 .pd-t-b-0 {
@@ -6332,9 +6279,10 @@ a.c-wht:hover {
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.07);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.07); }
 
-.list-0, .inherit ul li {
+.list-0 {
   list-style: none; }
 
+/*-- CSS Art */
 .arw-l {
   width: 0;
   height: 0;
@@ -6355,51 +6303,4 @@ a.arw-l:hover {
 a.arw-r:hover {
   border-left-color: #33313a; }
 
-/* ---  Animating  ------------------------------------------ */
-@keyframes myfirst {
-  from {
-    color: white; }
-
-  to {
-    color: #f4504d; } }
-
-@-webkit-keyframes flicker {
-  from {
-    color: white; }
-
-  to {
-    color: #f4504d; } }
-
-.anim-flck {
-  animation-name: flicker;
-  animation-duration: 0.5s;
-  animation-timing-function: ease;
-  animation-iteration-count: 1;
-  animation-direction: reverse;
-  -webkit-animation-name: flicker;
-  -webkit-animation-duration: 0.5s;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-direction: reverse; }
-
-.anim-flck.anim-1 {
-  -webkit-animation-delay: 1s; }
-
-.anim-flck.anim-2 {
-  -webkit-animation-delay: 1.5s; }
-
-.anim-flck.anim-3 {
-  -webkit-animation-delay: 2s; }
-
-.anim-flck.anim-4 {
-  -webkit-animation-delay: 2.5s; }
-
-.full-h-w {
-  /* Make element full window height X width & resizable!!!!! */
-  /* backface-visibility:$param; */
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden; }
-
-.inherit {
-  /* Old school */ }
+/* ---  Animating add that fun stuff here!  ------------------------------------------ */
